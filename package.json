@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "postinstall": "npm --prefix node_modules/eaglerrelayjs install && npm --prefix node_modules/eaglerrelayjs run build || npx tsc -p node_modules/eaglerrelayjs/tsconfig.json",
     "start": "node index.js"
   },
   "dependencies": {
     "express": "^4.18.2",
-    "eaglerrelayjs": "github:WebMCDevelopment/EaglerRelayJS"
+    "eaglerrelayjs": "github:WebMCDevelopment/EaglerRelayJS",
+    "typescript": "^5.7.2"
   }
 }
