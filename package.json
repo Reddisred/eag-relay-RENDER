@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "postinstall": "npm --prefix node_modules/eaglerrelayjs install && npm --prefix node_modules/eaglerrelayjs run build || npx tsc -p node_modules/eaglerrelayjs/tsconfig.json",
+    "postinstall": "npx tsc node_modules/eaglerrelayjs/src/*.ts --outDir node_modules/eaglerrelayjs/dist --module esnext --target es2022 --moduleResolution node --esModuleInterop --skipLibCheck && npx tsc-esm-fix node_modules/eaglerrelayjs/dist",
     "start": "node index.js"
   },
   "dependencies": {
     "express": "^4.18.2",
     "eaglerrelayjs": "github:WebMCDevelopment/EaglerRelayJS",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "tsc-esm-fix": "^3.0.3"
   }
 }
