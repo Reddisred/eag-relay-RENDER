@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "postinstall": "npx tsc node_modules/eaglerrelayjs/src/*.ts --outDir node_modules/eaglerrelayjs/dist --module esnext --target es2022 --moduleResolution node --esModuleInterop --skipLibCheck && npx tsc-esm-fix node_modules/eaglerrelayjs/dist",
+    "postinstall": "npx tsc $(find node_modules/eaglerrelayjs -maxdepth 3 -name '*.ts' ! -name '*.d.ts') --outDir node_modules/eaglerrelayjs/dist --module esnext --target es2022 --moduleResolution node --esModuleInterop --skipLibCheck && npx tsc-esm-fix node_modules/eaglerrelayjs/dist",
     "start": "node index.js"
   },
   "dependencies": {
